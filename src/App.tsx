@@ -4,7 +4,6 @@ import Input from './components/Input';
 import Label from './components/Label';
 import ReferenceTable from './components/ReferenceTable';
 import { IMCResult, calculateIMC } from './lib/IMC';
-import { formatNumber } from './lib/utils';
 import ResultsTable from './components/ResultsTable';
 
 function App() {
@@ -73,7 +72,7 @@ function App() {
   }
 
   return (
-    <main className="bg-white max-w-4xl mx-auto md:py-24 md:px-48 px-5 py-10">
+    <main className="max-w-4xl px-5 py-10 mx-auto bg-white md:py-24 md:px-48">
       <section id="form">
         <form onSubmit={handleSubmit}>
           <div>
@@ -91,11 +90,11 @@ function App() {
           )}
         </form>
       </section>
-      <section id="result" className="py-10 px-4 h-40">
+      <section id="result" className="h-40 px-4 py-10">
         {IMCData ? (
           <ResultsTable IMCData={IMCData} />
         ) : (
-          <p className="text-center text-neutral-400 text-xl">
+          <p className="text-xl text-center text-neutral-400">
             Saiba agora se está no seu peso ideal!
           </p>
         )}
